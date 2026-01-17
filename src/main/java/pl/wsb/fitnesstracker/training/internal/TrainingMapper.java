@@ -7,7 +7,7 @@ import pl.wsb.fitnesstracker.user.api.UserDto;
 import pl.wsb.fitnesstracker.user.internal.UserMapper;
 
 @Component
-class TrainingMapper {
+public class TrainingMapper {
 
     private final UserMapper userMapper;
 
@@ -15,7 +15,7 @@ class TrainingMapper {
         this.userMapper = userMapper;
     }
 
-    TrainingDto toDto(Training training) {
+    public TrainingDto toDto(Training training) {
         UserDto userDto = userMapper.toDto(training.getUser());
         return new TrainingDto(
                 training.getId(),
